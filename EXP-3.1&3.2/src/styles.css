@@ -1,0 +1,101 @@
+:root {
+  font-family: Arial, sans-serif;
+  line-height: 1.4;
+  color: #111827;
+  background: #f3f4f6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 900px;
+  margin: 1rem auto;
+  padding: 0 1rem 2rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111827;
+  color: #fff;
+  padding: 0.9rem 1rem;
+}
+
+.brand a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.menu a {
+  color: #e5e7eb;
+  text-decoration: none;
+}
+
+.menu a.active {
+  color: #fff;
+  font-weight: 600;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+input,
+select,
+button {
+  font: inherit;
+  padding: 0.5rem 0.65rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #fff;
+}
+
+button.ghost {
+  background: #374151;
+}
+
+.hint {
+  color: #4b5563;
+}
+
+.error {
+  color: #b91c1c;
+}

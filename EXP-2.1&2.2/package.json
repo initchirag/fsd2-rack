@@ -1,0 +1,26 @@
+{
+  "name": "exp-2-1-2-2",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node ./node_modules/vite/bin/vite.js",
+    "build": "node ./node_modules/vite/bin/vite.js build",
+    "lint": "node ./node_modules/oxlint/bin/oxlint src",
+    "preview": "node ./node_modules/vite/bin/vite.js preview"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "latest",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-redux": "latest",
+    "reselect": "latest"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.3",
+    "oxlint": "^1.71.0",
+    "vite": "^8.1.1"
+  }
+}
