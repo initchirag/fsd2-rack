@@ -1,0 +1,41 @@
+{
+  "info": { "name": "PostScheduler API", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json" },
+  "variable": [{ "key": "base", "value": "http://localhost:8080/api/v1" }],
+  "item": [
+    {
+      "name": "Create DRAFT post",
+      "request": { "method": "POST", "url": "{{base}}/posts",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"title\": \"My first post\",\n  \"content\": \"Hello world!\",\n  \"platform\": \"TWITTER\",\n  \"status\": \"DRAFT\"\n}" }
+      }
+    },
+    {
+      "name": "Create SCHEDULED post",
+      "request": { "method": "POST", "url": "{{base}}/posts",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"title\": \"Scheduled post\",\n  \"content\": \"Going live tomorrow!\",\n  \"platform\": \"INSTAGRAM\",\n  \"status\": \"SCHEDULED\",\n  \"scheduledAt\": \"2025-12-01T10:00:00\"\n}" }
+      }
+    },
+    { "name": "Get all posts",           "request": { "method": "GET",    "url": "{{base}}/posts" } },
+    { "name": "Get post by ID",          "request": { "method": "GET",    "url": "{{base}}/posts/1" } },
+    { "name": "Filter by status",        "request": { "method": "GET",    "url": "{{base}}/posts?status=SCHEDULED" } },
+    { "name": "Filter by platform",      "request": { "method": "GET",    "url": "{{base}}/posts?platform=TWITTER" } },
+    { "name": "Get posts due",           "request": { "method": "GET",    "url": "{{base}}/posts/due" } },
+    {
+      "name": "Update post",
+      "request": { "method": "PUT", "url": "{{base}}/posts/1",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"title\": \"Updated title\",\n  \"status\": \"PUBLISHED\"\n}" }
+      }
+    },
+    { "name": "Delete post",             "request": { "method": "DELETE", "url": "{{base}}/posts/1" } },
+    { "name": "404 - missing post",      "request": { "method": "GET",    "url": "{{base}}/posts/9999" } },
+    {
+      "name": "400 - validation error (blank title)",
+      "request": { "method": "POST", "url": "{{base}}/posts",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"title\": \"\",\n  \"platform\": \"TWITTER\",\n  \"status\": \"DRAFT\"\n}" }
+      }
+    }
+  ]
+}
