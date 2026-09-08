@@ -161,9 +161,3 @@ Import `postman_collection.json` from the project root. Contains pre-built reque
 - `CorrelationIdFilter` — assigns a unique ID to every request, injects it into MDC so it appears in every log line for that request
 - `RequestLoggingInterceptor` — logs the resolved handler after Spring routing
 - Correlation ID echoed back in `X-Correlation-ID` response header
-
----
-
-## Author
-
-Karan — B.E. Cyber Security, Chandigarh University
